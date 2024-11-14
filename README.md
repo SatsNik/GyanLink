@@ -59,4 +59,4 @@ Contact
 For any questions or suggestions, please reach out to:
 
 Name: Satyendra Shukla
-Email: your.email@example.com
+Email: satyendrashukla381@gmail.com
