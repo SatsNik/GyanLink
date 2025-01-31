@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Information System</h1>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center alert alert-primary">Student Information System</h1>
+            </div>
+            <div class="col-sm-6">
+            <table class="table">
+                <thead>
+                    <tr class="text-center">
+                        <th>id</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>mobile no</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for k in show %}
+                    <tr class="text-center">
+                       <td>{{k.id}}</td>
+                       <td>{{k.name}}</td> 
+                       <td>{{k.email}}</td>
+                       <td>{{k.contactno}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table> 
+            </div>
+            <div class="col-sm-6">
+                <form action="{% url 'stusave' %}" method="post">
+                    {% csrf_token %}
+                    <p>Enter your Roll no</p>
+                    <input type="text" name="id" class="form-control border-dark rounded-0">
+                    <p class="mt-2">Enter your Name</p>
+                    <input type="text" name="name" class="form-control border-dark rounded-0">
+                    <p class="mt-3">Enter your Mobile no</p>
+                    <input type="text" name="contactno" class="form-control border-dark rounded-0">
+                    <p class="mt-2">Enter your E-mail</p>
+                    <input type="email" name="email" class="form-control border-dark rounded-0">
+                    <input type="submit" class="mt-4 form-control btn btn-danger">
+                </form>
+            </div>       
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
